@@ -1,59 +1,214 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+![Laravel](https://img.shields.io/badge/Laravel-Backend-red)
+![Python](https://img.shields.io/badge/Python-ComputerVision-blue)
+![OpenCV](https://img.shields.io/badge/OpenCV-Vision-green)
+![RFID](https://img.shields.io/badge/RFID-Attendance-purple)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# 🎓 ATTEND-IO: Smart Classroom untuk Presensi dan Monitoring Fokus Mahasiswa
 
-## About Laravel
+**ATTEND-IO** adalah sistem **Smart Classroom** yang mengintegrasikan teknologi **RFID, Computer Vision, Face Recognition, dan IoT** untuk menghadirkan sistem presensi otomatis sekaligus monitoring fokus mahasiswa secara real-time.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Di era pembelajaran digital, sistem presensi tidak lagi cukup hanya mencatat kehadiran. ATTEND-IO hadir untuk memberikan solusi yang lebih **cerdas, akurat, dan berbasis data** sehingga dosen dapat memahami kondisi kelas secara objektif.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Sistem ini menggabungkan berbagai teknologi modern seperti **Python Computer Vision**, **Face Recognition**, **RFID Scanner**, **ESP32 IoT**, dan **Laravel Backend** dalam satu ekosistem yang terintegrasi.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Dengan ATTEND-IO, presensi tidak hanya menjadi proses administratif, tetapi juga bagian dari **smart classroom ecosystem**.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+# 🚀 Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Beberapa fitur utama yang tersedia dalam sistem ATTEND-IO:
 
-## Laravel Sponsors
+### 📡 Smart Attendance (RFID + Face Recognition)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Sistem presensi otomatis menggunakan kombinasi:
 
-### Premium Partners
+- **RFID Card** untuk identifikasi mahasiswa
+- **Face Recognition** untuk verifikasi identitas
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Metode ini membantu mencegah kecurangan presensi seperti **titip absen**.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 👁 Real-time Focus Monitoring
 
-## Code of Conduct
+Menggunakan **Python Computer Vision (PCV)** untuk menganalisis fokus mahasiswa selama pembelajaran.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Sistem akan mendeteksi:
 
-## Security Vulnerabilities
+- arah pandangan
+- kondisi mata
+- tingkat perhatian mahasiswa
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Data ini kemudian dikirim ke backend untuk dianalisis.
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 🚪 Smart Door Access (IoT)
+
+Menggunakan **ESP32** untuk mengontrol pintu kelas secara otomatis.
+
+Fitur:
+
+- akses pintu hanya untuk mahasiswa yang terdaftar
+- terintegrasi dengan sistem presensi
+- meningkatkan keamanan ruang kelas
+
+---
+
+### 📊 Lecturer Dashboard
+
+Dashboard berbasis web yang memungkinkan dosen untuk melihat:
+
+- data presensi mahasiswa
+- tingkat fokus mahasiswa
+- riwayat aktivitas kelas
+- statistik kehadiran
+
+Semua data ditampilkan secara **visual dan mudah dipahami**.
+
+---
+
+# 🛠 Tech Stack
+
+Teknologi yang digunakan dalam pengembangan ATTEND-IO:
+
+| Technology | Description |
+|-----------|-------------|
+| Laravel | Backend API & Dashboard |
+| PHP | Server-side programming |
+| Python | Computer Vision & Face Recognition |
+| OpenCV | Image processing |
+| Face Recognition Library | Deteksi wajah mahasiswa |
+| MySQL | Database |
+| ESP32 | IoT device untuk kontrol pintu |
+| RFID Reader | Sistem presensi kartu mahasiswa |
+| REST API | Komunikasi antara sistem |
+
+---
+
+# 🏗 System Architecture
+
+ATTEND-IO menggunakan arsitektur sistem terintegrasi sebagai berikut:
+
+```
+RFID Reader
+     │
+     ▼
+ESP32 Device ─────► Laravel API
+     │                 │
+     │                 ▼
+     │             MySQL Database
+     │
+     ▼
+Camera System
+     │
+     ▼
+Python Computer Vision
+     │
+     ▼
+Focus Analysis
+     │
+     ▼
+Laravel Backend API
+     │
+     ▼
+Lecturer Dashboard
+```
+
+
+---
+
+# ⚙️ Installation
+
+### 1. Clone repository
+
+```
+git clone https://github.com/Dema08/ATTEND-IO-Semester-5.git
+```
+
+---
+
+## Backend Laravel Setup
+
+### Install dependency
+
+```
+composer install
+```
+
+### Setup environment
+
+```
+cp .env.example .env
+```
+
+### Generate key
+
+```
+php artisan key:generate
+```
+
+### Run migration
+
+```
+php artisan migrate
+```
+
+### Run server
+
+```
+php artisan serve
+```
+
+---
+
+## Python Computer Vision Setup
+
+Install dependency Python:
+
+```
+pip install opencv-python
+pip install face-recognition
+pip install numpy
+```
+
+Jalankan modul computer vision:
+
+```
+python detect_face.py
+```
+
+---
+
+# 📸 System Preview
+
+![Poster](images/poster.png)
+
+
+---
+
+# 🎯 Project Goals
+
+Tujuan utama pengembangan ATTEND-IO:
+
+- Mengotomatisasi sistem presensi mahasiswa
+- Mengurangi kecurangan presensi
+- Membantu dosen memonitor fokus mahasiswa
+- Mengintegrasikan IoT dengan sistem pendidikan
+- Mengembangkan konsep **Smart Classroom di Indonesia**
+
+---
+
+# 👥 Our Team
+
+| Name | NIM | Instagram |
+|-----|-----|-----------|
+| M. Dien Vito Alivio Hidayat | E41231065 | @m.dien_vito |
+| Muhammad Yusron Kurniawan | E41231326 | @y.sron_ |
+| Dymas Ersa Ramadhan | E41231177 | @dymaser |
+| Dema Adzhani | E41231272 | @demadzh |
+| Nandita Putri Hanifa Jannah | E41231216 | @na_nditaaph |
+| Abdul Muqid | E41231328 | @muqid__ |
+
+
