@@ -1,0 +1,78 @@
+@extends('layouts.main')
+
+@section('title', 'Tambah Kelas')
+@section('page_title', 'Tambah Kelas')
+
+@section('content')
+    <div class="mb-4 flex items-center justify-between">
+        <h2 class="text-lg font-semibold">Form Tambah Kelas</h2>
+        <a href="{{ route('master.kelas.index') }}"
+           class="inline-flex items-center rounded-xl border border-slate-700 bg-slate-900/60 px-3 py-2 text-xs font-medium text-slate-200 hover:bg-slate-800">
+            ← Kembali ke Master Kelas
+        </a>
+    </div>
+
+    @if ($errors->any())
+        <div class="mb-4 rounded-xl border border-rose-500/40 bg-rose-500/10 px-4 py-2 text-sm text-rose-200">
+            <p class="font-semibold mb-1">Terjadi kesalahan:</p>
+            <ul class="list-disc list-inside space-y-1">
+                @foreach ($errors->all() as $err)
+                    <li>{{ $err }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <div class="rounded-2xl bg-slate-900/70 border border-slate-800/80 p-5 max-w-xl">
+        <form action="{{ route('master.kelas.store') }}" method="POST" class="space-y-4">
+            @csrf
+
+            {{-- Golongan --}}
+            <div>
+                <label for="golongan" class="block text-xs text-slate-400 mb-1">Golongan</label>
+                <input type="text" name="golongan" id="golongan"
+                       value="{{ old('golongan') }}" required
+                       class="w-full rounded-xl bg-slate-900 border border-slate-700 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/70 focus:border-indigo-500/70">
+            </div>
+
+            {{-- Mata Kuliah --}}
+            <div>
+                <label for="mata_kuliah_id" class="block text-xs text-slate-400 mb-1">Mata Kuliah</label>
+                <select name="mata_kuliah_id" id="mata_kuliah_id" required
+                        class="w-full rounded-xl bg-slate-900 border border-slate-700 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/70 focus:border-indigo-500/70">
+                    <option value="">-- Pilih Mata Kuliah --</option>
+                    @foreach ($mataKuliah as $mk)
+                        <option value="{{ $mk->id }}" @selected(old('mata_kuliah_id') == $mk->id)>
+                            {{ $mk->nama_matkul }} {{ $mk->kode_matkul ? '(' . $mk->kode_matkul . ')' : '' }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            {{-- Dosen --}}
+            <div>
+                <label for="dosen_id" class="block text-xs text-slate-400 mb-1">Dosen Pengampu</label>
+                <select name="dosen_id" id="dosen_id" required
+                        class="w-full rounded-xl bg-slate-900 border border-slate-700 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/70 focus:border-indigo-500/70">
+                    <option value="">-- Pilih Dosen --</option>
+                    @foreach ($dosen as $d)
+                        <option value="{{ $d->id }}" @selected(old('dosen_id') == $d->id)>
+                            {{ $d->nama_dosen }} {{ $d->nip ? '(' . $d->nip . ')' : '' }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="flex items-center justify-end gap-2 pt-2">
+                <a href="{{ route('master.kelas.index') }}"
+                   class="text-xs text-slate-400 hover:text-slate-200">
+                    Batalkan
+                </a>
+                <button type="submit"
+                        class="inline-flex items-center rounded-xl bg-indigo-500 px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-indigo-500/40">
+                    💾 Simpan
+                </button>
+            </div>
+        </form>
+    </div>
+@endsection
